@@ -7,7 +7,6 @@ public class BoundaryBehaviour : MonoBehaviour {
     void OnTriggerExit(Collider other)
     {
         //print("the object destroyed: " + other.transform.ToString());
-        //Instantiate(enemyExplosion, other.gameObject.transform.position, other.gameObject.transform.rotation);
         Destroy(other.gameObject);
     }
 
