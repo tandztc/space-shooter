@@ -56,8 +56,7 @@ public class EnemyBehaviour : MonoBehaviour {
         {
             //冲锋和每次闪避后，速度设为0，打一枪，休息一段时间
             rigidbody.velocity = Vector3.zero;
-            weapon.Fire();
-            audio.Play();
+            Attack();
             yield return new WaitForSeconds(Random.Range(evadeIntervalMin, evadeIntervalMax));
 
             //生成新的闪避位置
@@ -112,8 +111,15 @@ public class EnemyBehaviour : MonoBehaviour {
         }
 
         Instantiate(enemyExplosion, transform.position, transform.rotation);
+        
         Destroy(gameObject);
         
+    }
+
+    void Attack()
+    {
+        weapon.Fire();
+        audio.Play();
     }
 
 }
