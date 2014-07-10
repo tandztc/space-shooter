@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 13ed70aa9631a2746b1e4b13cfebddbf
+guid: 5282f20eba4d44213820e21af8481932
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -7,11 +7,12 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: player_ship_collider
+    4300000: player_ship
+    4300002: player_ship_collider
     9500000: //RootNode
   materials:
-    importMaterials: 1
-    materialName: 0
+    importMaterials: 0
+    materialName: 1
     materialSearch: 1
   animations:
     legacyGenerateAnimations: 4
@@ -46,7 +47,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     human: []
@@ -60,6 +61,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   additionalBone: 0
   userData: 

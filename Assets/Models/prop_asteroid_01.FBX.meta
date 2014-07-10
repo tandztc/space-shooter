@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3e885fbde3bdcee489beb4f565795bef
+guid: baedbbad82997f445a8cb4da210404e0
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -7,11 +7,12 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: prop_asteroid_01
+    4300000: Group1
+    4300002: prop_asteroid_01
     9500000: //RootNode
   materials:
     importMaterials: 1
-    materialName: 0
+    materialName: 1
     materialSearch: 1
   animations:
     legacyGenerateAnimations: 4
@@ -46,7 +47,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     human: []
@@ -60,6 +61,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   additionalBone: 0
   userData: 
