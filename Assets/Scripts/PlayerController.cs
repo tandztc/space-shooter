@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
+using ProtoBuf;
 
 [System.Serializable]
 public class Boundary
@@ -54,6 +56,19 @@ public class PlayerController : MonoBehaviour {
 
     void PlayFire()
     {
+        //如果连上了网络，就在射击的时候发一个消息
+        if (NetClient.instance.isConnected())
+        {
+            ChatMsg msg = new ChatMsg();
+            msg.sender = "spaceShooter";
+            msg.msg = "player shoot at level: " + powerLevel.ToString(); ;
+            MemoryStream dest = new MemoryStream();
+            Serializer.Serialize(dest, msg);
+            byte[] array = new byte[dest.Length];
+            System.Array.Copy(dest.GetBuffer(), array, dest.Length);
+            NetClient.instance.SendMsg(array);
+        }
+
         Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
         for (int i = 1; i < powerLevel; i++)
         {
