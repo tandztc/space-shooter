@@ -33,10 +33,11 @@ public class NetClient
     /// </summary>
     public void SendMsg(byte[] msg)
     {
-        //消息体结构：消息体长度+消息体
-        byte[] data = new byte[4 + msg.Length];
-        BitConverter.GetBytes(msg.Length).CopyTo(data, 0);
-        msg.CopyTo(data, 4);
+        //消息体结构：消息体长度（int） + 消息类型（short） + 消息体
+        byte[] data = new byte[6 + msg.Length];
+        BitConverter.GetBytes(msg.Length+6).CopyTo(data, 0);
+        BitConverter.GetBytes(0).CopyTo(data, 4);
+        msg.CopyTo(data, 6);
         client.GetStream().Write(data, 0, data.Length);
     }
 
