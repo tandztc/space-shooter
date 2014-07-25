@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
+using ProtoBuf;
 
 [System.Serializable]
 public class Hazards
@@ -54,6 +56,9 @@ public class GameController : MonoBehaviour {
         restartText.text = "";
         gameoverText.text = "";
         UpdateScore();
+
+        //尝试联网
+        NetClient.instance.Init();
 
         //print("Starting " + Time.time);
         StartCoroutine(SpawnWaves());
